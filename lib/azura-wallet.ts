@@ -28,6 +28,10 @@ class AzuraWalletManager {
   async transfer(to: string, amount: string, asset: string): Promise<{ txHash: string }> {
     throw new Error('Wallet operations require full platform deployment');
   }
+
+  async distributeUSDC(recipients: { address: string; amount: string }[]): Promise<{ txHashes: string[]; failed: string[] }> {
+    throw new Error('Wallet operations require full platform deployment');
+  }
 }
 
 export const azuraWallet = AzuraWalletManager.getInstance();
