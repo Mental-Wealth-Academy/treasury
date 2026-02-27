@@ -17,7 +17,15 @@ class AzuraWalletManager {
     return process.env.AZURA_WALLET_ADDRESS || '0x0000000000000000000000000000000000000000';
   }
 
+  async getWalletAddress(): Promise<string> {
+    return this.getAddress();
+  }
+
   async sendUSDC(to: string, amount: string): Promise<{ txHash: string }> {
+    throw new Error('Wallet operations require full platform deployment');
+  }
+
+  async transfer(to: string, amount: string, asset: string): Promise<{ txHash: string }> {
     throw new Error('Wallet operations require full platform deployment');
   }
 }
